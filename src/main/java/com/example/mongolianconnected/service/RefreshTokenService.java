@@ -16,7 +16,7 @@ public class RefreshTokenService {
     private final RefreshTokenRepository refreshTokenRepository;
     private final long REFRESH_EXPIRATION_MS = 1000L * 60 * 60 * 24 * 7; // 7 days
 //    private static final long REFRESH_TOKEN_EXPIRATION = 1000 * 60; // 1 минут test
-//    test 12345
+
     @Autowired
     public RefreshTokenService(RefreshTokenRepository refreshTokenRepository) {
         this.refreshTokenRepository = refreshTokenRepository;

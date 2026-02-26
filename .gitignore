@@ -1,0 +1,74 @@
+# ===============================
+# Build directories
+# ===============================
+target/
+build/
+
+# Maven wrapper jar
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle wrapper
+.gradle/
+build/
+
+# ===============================
+# IDE files
+# ===============================
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse / STS
+.classpath
+.project
+.settings/
+.springBeans
+.apt_generated
+.factorypath
+.sts4-cache/
+
+# NetBeans
+/nbproject/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# ===============================
+# OS files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Logs and temporary files
+# ===============================
+*.log
+*.tmp
+*.bak
+*.swp
+
+# ===============================
+# Spring Boot configuration
+# ===============================
+# Main application properties (contains secrets)
+application.properties
+
+# Optionally, if you have profiles or secrets:
+# application-*.properties
+# application.yml
+# application-*.yml
+
+# ===============================
+# Other
+# ===============================
+# Node / frontend build artifacts if applicable
+node_modules/
+dist/

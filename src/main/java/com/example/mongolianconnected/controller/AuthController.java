@@ -82,7 +82,7 @@ public class AuthController {
 
         return ResponseEntity.ok(ApiResponse.<UserDto>builder()
                 .success(true)
-                .message("User registered successfully")
+                .message("User registered successfully!")
                 .data(userDto)
                 .errorCode(null)
                 .build());

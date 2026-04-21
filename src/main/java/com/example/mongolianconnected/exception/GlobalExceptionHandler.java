@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
                 .success(false)
                 .message(ex.getMessage())
                 .data(null)
-                .errorCode(ex.getErrorCode())
+                .statusCode(ex.getErrorCode())
                 .build();
         return ResponseEntity.ok(response);  // always HTTP 200
     }
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
                 .success(false)
                 .message(ex.getMessage())
                 .data(null)
-                .errorCode(ex.getErrorCode())
+                .statusCode(ex.getErrorCode())
                 .build();
         return ResponseEntity.ok(response);
     }
@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
                 .success(false)
                 .message("Internal server error")
                 .data(null)
-                .errorCode("INTERNAL_ERROR")
+                .statusCode("INTERNAL_ERROR")
                 .build();
         return ResponseEntity.ok(response);
     }

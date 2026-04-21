@@ -13,5 +13,5 @@ public class ApiResponse<T> {
     private boolean success;   // true = success, false = error
     private String message;    // user-friendly message
     private T data;            // payload, can be null for errors
-    private String errorCode;  // optional, internal error code
+    private String statusCode;  // optional, internal error code
 }

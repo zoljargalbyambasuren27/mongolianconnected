@@ -12,12 +12,12 @@ import com.example.mongolianconnected.repository.UserRepository;
 import com.example.mongolianconnected.security.JwtUtil;
 import com.example.mongolianconnected.service.RefreshTokenService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
@@ -41,7 +41,7 @@ public class AuthController {
                     .success(false)
                     .message("Email already in use")
                     .data(null)
-                    .errorCode("EMAIL_EXISTS")
+                    .statusCode("EMAIL_EXISTS")
                     .build());
         }
 
@@ -50,7 +50,7 @@ public class AuthController {
                     .success(false)
                     .message("Phone number already in use")
                     .data(null)
-                    .errorCode("PHONE_EXISTS")
+                    .statusCode("PHONE_EXISTS")
                     .build());
         }
 
@@ -84,7 +84,7 @@ public class AuthController {
                 .success(true)
                 .message("User registered successfully!")
                 .data(userDto)
-                .errorCode(null)
+                .statusCode(null)
                 .build());
     }
 
@@ -126,7 +126,7 @@ public class AuthController {
                 .success(true)
                 .message("Login successful")
                 .data(response)
-                .errorCode(null)
+                .statusCode("200")
                 .build();
 
         return ResponseEntity.ok(apiResponse);
@@ -143,7 +143,7 @@ public class AuthController {
                     .success(false)
                     .message("Invalid or missing refresh token")
                     .data(null)
-                    .errorCode("INVALID_REFRESH_TOKEN")
+                    .statusCode("INVALID_REFRESH_TOKEN")
                     .build());
         }
 
@@ -155,7 +155,7 @@ public class AuthController {
                 .success(true)
                 .message("Token refreshed successfully")
                 .data(Map.of("jwt", newJwt))
-                .errorCode(null)
+                .statusCode(null)
                 .build());
     }
 
@@ -167,7 +167,7 @@ public class AuthController {
                 .success(true)
                 .message("Logged out successfully")
                 .data(null)
-                .errorCode(null)
+                .statusCode(null)
                 .build());
     }
 }
